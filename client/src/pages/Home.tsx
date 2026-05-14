@@ -213,7 +213,7 @@ export default function Home() {
           }}
         >
           <img
-            src="/manus-storage/kol-satmar-logo_39731f91.png"
+            src="https://i.imgur.com/9W3IfMC.png"
             alt="קול סאטמאר סימבאל"
             className="w-[280px] sm:w-[360px] md:w-[440px] lg:w-[520px] max-w-full"
             style={{ filter: "drop-shadow(0 0 20px oklch(0.65 0.09 78 / 30%))" }}
@@ -417,7 +417,7 @@ export default function Home() {
             {/* Logo center */}
             <div className="flex flex-col items-center justify-center flex-shrink-0">
               <img
-                src="/manus-storage/kol-satmar-logo_39731f91.png"
+                src="https://i.imgur.com/9W3IfMC.png"
                 alt="קול סאטמאר"
                 className="w-36 opacity-75"
               />
