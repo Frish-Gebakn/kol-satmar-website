@@ -40,40 +40,39 @@
 }
 
   :root {
-  /* Royal Light Elegance Palette — warm parchment + deep gold */
-  --gold: oklch(0.58 0.13 75);           /* Deep rich gold for light bg */
-  --gold-light: oklch(0.68 0.13 75);     /* Slightly lighter gold */
-  --gold-dark: oklch(0.45 0.11 75);      /* Dark gold for shadows */
-  --cream: oklch(0.96 0.02 85);          /* Warm cream */
+  /* Calm White-Gold Palette — soft ivory white + muted warm gold */
+  --gold: oklch(0.65 0.09 78);           /* Muted warm gold — not too loud */
+  --gold-light: oklch(0.74 0.08 78);     /* Soft light gold */
+  --gold-dark: oklch(0.50 0.08 78);      /* Subdued dark gold */
 
   --radius: 0.5rem;
-  --background: oklch(0.97 0.015 85);    /* Warm parchment white */
-  --foreground: oklch(0.20 0.02 60);     /* Deep warm brown-black */
-  --card: oklch(0.99 0.008 85);          /* Near-white card */
-  --card-foreground: oklch(0.20 0.02 60);
-  --popover: oklch(0.99 0.008 85);
-  --popover-foreground: oklch(0.20 0.02 60);
-  --primary: oklch(0.58 0.13 75);        /* Deep gold */
-  --primary-foreground: oklch(0.99 0.008 85);
-  --secondary: oklch(0.93 0.015 85);
-  --secondary-foreground: oklch(0.35 0.02 60);
-  --muted: oklch(0.94 0.012 85);
-  --muted-foreground: oklch(0.50 0.03 60);
-  --accent: oklch(0.58 0.13 75);
-  --accent-foreground: oklch(0.99 0.008 85);
+  --background: oklch(0.99 0.006 80);    /* Pure soft white with tiny warmth */
+  --foreground: oklch(0.28 0.015 60);    /* Warm dark charcoal — readable, not harsh */
+  --card: oklch(1.0 0.004 80);           /* Clean white card */
+  --card-foreground: oklch(0.28 0.015 60);
+  --popover: oklch(1.0 0.004 80);
+  --popover-foreground: oklch(0.28 0.015 60);
+  --primary: oklch(0.65 0.09 78);        /* Muted gold */
+  --primary-foreground: oklch(0.99 0.004 80);
+  --secondary: oklch(0.96 0.008 80);
+  --secondary-foreground: oklch(0.40 0.015 60);
+  --muted: oklch(0.96 0.006 80);
+  --muted-foreground: oklch(0.55 0.012 60);
+  --accent: oklch(0.65 0.09 78);
+  --accent-foreground: oklch(0.99 0.004 80);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(0.58 0.13 75 / 30%);
-  --input: oklch(0.93 0.015 85);
-  --ring: oklch(0.58 0.13 75 / 50%);
-  --sidebar: oklch(0.97 0.015 85);
-  --sidebar-foreground: oklch(0.20 0.02 60);
-  --sidebar-primary: oklch(0.58 0.13 75);
-  --sidebar-primary-foreground: oklch(0.99 0.008 85);
-  --sidebar-accent: oklch(0.93 0.015 85);
-  --sidebar-accent-foreground: oklch(0.20 0.02 60);
-  --sidebar-border: oklch(0.58 0.13 75 / 20%);
-  --sidebar-ring: oklch(0.58 0.13 75 / 50%);
+  --border: oklch(0.65 0.09 78 / 22%);
+  --input: oklch(0.96 0.006 80);
+  --ring: oklch(0.65 0.09 78 / 40%);
+  --sidebar: oklch(0.99 0.006 80);
+  --sidebar-foreground: oklch(0.28 0.015 60);
+  --sidebar-primary: oklch(0.65 0.09 78);
+  --sidebar-primary-foreground: oklch(0.99 0.004 80);
+  --sidebar-accent: oklch(0.96 0.008 80);
+  --sidebar-accent-foreground: oklch(0.28 0.015 60);
+  --sidebar-border: oklch(0.65 0.09 78 / 15%);
+  --sidebar-ring: oklch(0.65 0.09 78 / 40%);
 }
 
 @layer base {
@@ -134,15 +133,15 @@
 
   /* Gold text utility */
   .text-gold {
-    color: oklch(0.58 0.13 75);
+    color: oklch(0.62 0.09 78);
   }
   .text-gold-light {
-    color: oklch(0.68 0.13 75);
+    color: oklch(0.72 0.08 78);
   }
 
   /* Gold gradient text */
   .text-gold-gradient {
-    background: linear-gradient(135deg, oklch(0.68 0.13 75) 0%, oklch(0.55 0.13 75) 40%, oklch(0.42 0.11 75) 100%);
+    background: linear-gradient(135deg, oklch(0.72 0.08 78) 0%, oklch(0.62 0.09 78) 40%, oklch(0.50 0.08 78) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -150,34 +149,34 @@
 
   /* Gold border glow */
   .border-gold {
-    border-color: oklch(0.58 0.13 75 / 60%);
+    border-color: oklch(0.65 0.09 78 / 50%);
   }
   .border-gold-glow {
-    border-color: oklch(0.58 0.13 75);
-    box-shadow: 0 0 12px oklch(0.58 0.13 75 / 30%);
+    border-color: oklch(0.65 0.09 78);
+    box-shadow: 0 0 10px oklch(0.65 0.09 78 / 20%);
   }
 
   /* Gold divider */
   .gold-divider {
     height: 1px;
-    background: linear-gradient(90deg, transparent, oklch(0.58 0.13 75), transparent);
+    background: linear-gradient(90deg, transparent, oklch(0.65 0.09 78 / 70%), transparent);
   }
 
   /* Phone card hover effect */
   .phone-card {
     transition: all 200ms cubic-bezier(0.23, 1, 0.32, 1);
-    border: 1px solid oklch(0.58 0.13 75 / 30%);
+    border: 1px solid oklch(0.65 0.09 78 / 22%);
   }
   .phone-card:hover {
-    border-color: oklch(0.58 0.13 75 / 70%);
-    box-shadow: 0 0 20px oklch(0.58 0.13 75 / 15%), 0 4px 24px oklch(0 0 0 / 12%);
+    border-color: oklch(0.65 0.09 78 / 55%);
+    box-shadow: 0 0 16px oklch(0.65 0.09 78 / 10%), 0 4px 20px oklch(0 0 0 / 7%);
     transform: translateY(-2px);
   }
 
   /* Emblem glow animation */
   @keyframes emblem-glow {
-    0%, 100% { filter: drop-shadow(0 0 20px oklch(0.58 0.13 75 / 35%)); }
-    50% { filter: drop-shadow(0 0 35px oklch(0.58 0.13 75 / 55%)); }
+    0%, 100% { filter: drop-shadow(0 0 18px oklch(0.65 0.09 78 / 28%)); }
+    50% { filter: drop-shadow(0 0 28px oklch(0.65 0.09 78 / 42%)); }
   }
 
   .emblem-glow {
@@ -191,15 +190,16 @@
   }
 
   .btn-gold {
-    background: linear-gradient(135deg, oklch(0.52 0.13 75), oklch(0.63 0.14 75), oklch(0.52 0.13 75));
+    background: linear-gradient(135deg, oklch(0.60 0.09 78), oklch(0.70 0.09 78), oklch(0.60 0.09 78));
     background-size: 200% auto;
-    color: oklch(0.99 0.008 85);
+    color: oklch(0.99 0.004 80);
     font-weight: 700;
     transition: all 200ms cubic-bezier(0.23, 1, 0.32, 1);
+    box-shadow: 0 2px 12px oklch(0.65 0.09 78 / 25%);
   }
   .btn-gold:hover {
-    animation: gold-shimmer 1.5s linear infinite;
-    box-shadow: 0 4px 20px oklch(0.58 0.13 75 / 45%);
+    animation: gold-shimmer 1.8s linear infinite;
+    box-shadow: 0 4px 18px oklch(0.65 0.09 78 / 35%);
     transform: translateY(-1px);
   }
   .btn-gold:active {
@@ -245,7 +245,7 @@
   /* Ornate section title */
   .section-title {
     font-family: 'Frank Ruhl Libre', serif;
-    color: oklch(0.58 0.13 75);
+    color: oklch(0.55 0.09 78);
     text-align: center;
     position: relative;
   }
