@@ -194,7 +194,7 @@ export default function Home() {
         className="fixed inset-0 pointer-events-none z-0"
         style={{
           background:
-            "linear-gradient(180deg, oklch(0.99 0.008 80 / 88%) 0%, oklch(0.98 0.007 80 / 80%) 50%, oklch(0.99 0.008 80 / 92%) 100%)",
+            "linear-gradient(180deg, oklch(1.0 0.003 80 / 96%) 0%, oklch(1.0 0.003 80 / 93%) 40%, oklch(0.99 0.005 80 / 90%) 70%, oklch(0.99 0.006 80 / 92%) 100%)",
         }}
       />
 
