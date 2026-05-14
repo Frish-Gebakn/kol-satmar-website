@@ -1,0 +1,35 @@
+{
+  "build_command": "pnpm run build",
+  "capabilities": [],
+  "dev_command": "pnpm run dev",
+  "env_vars": {},
+  "experiments": null,
+  "git_remote": {
+    "repo_url": "s3://vida-prod-gitrepo/webdev-git/96842623/NgsyRHxn8VbGTvVQUBAgFa",
+    "access_key_id": "ASIAZV3A2ECZBAC2VJ6J",
+    "secret_access_key": "gZySPN8cH1g49CybaxO1DiSp6nI5zYD2dBDdkZXi",
+    "session_token": "IQoJb3JpZ2luX2VjEJ3//////////wEaCXVzLWVhc3QtMSJHMEUCIQDnZenU/WF5TNKTt3Sf4c45VpMZfUFFvewaIBKWwxv97gIgRVGR4ak164RVNc8Ck4CdL72HMFDQ2cPjSM+4vYhy0tMq4gMIZhAEGgw2NjUzODYwOTg4NjYiDLv1ZCjVFFkCCrNBWCq/A2dkP/4/vJEfpo/IAYUydzVqp0PJE1Izb3ts9wJvAy14b4g6at0lPDnEIt5HQWsVi/U57JLrkUfqVGsDGBTsdU3FGfJ88vzDei67UGIzYYeBcDsyKGlwN/P2+70mPnmjgPlogyfo73ZfJ2VuMEXlC7hnsZOJscHbQworBrlKCShUDhE/WUVc3FOTesCd1FbD9w8lFwBi11c10F88VrFlDeRVL7GQ1J7mPGMCaXntlT+6qKVQnT+5RkvTz5wR5SQ4hWaRZFEH95ZidLRHLUNRZ9zy5PxpByeVg8ROGdWmIvBSUEmZild8/aih1YiEJj96g0uLPc0Hvq0nI7ugDKDcy2gRBDLEoJH6QcI8J+w41yVn5QULsl3Va+n2N2/ZWjvIQhsCzCloRbJMBpAtP57Zi5HjOOk55fHkyGSmarBvPk9/hrVtZWWwLDCL4NOcnjuts1xRTmq3ye+J5evrHpi3C/G4lcMkPdKO3e3X9K+z9jxl3CLDCtl6eAidABs8h3BWSiY4gpO1TUtAYuBBpoz5zyG+RfrZjfjVlrm2MWmIMNkoO6fei2IdU8uAukpxWPdk+N1VMbZTYlQ1igfbuqJjwzD+3pjQBjqdAaZ0JBURVPoOPo8RTA4Vndz/WtH33QQzLroNd3ueuC/sScWD53QzLCjsFrH0ywLl2IzHQdlUIAo8phnlNHuTtd9Nk9fDlPFHp4Qi/EzBlotrRCzB+8QNddPoOfuL8XG/3zGNIl2BygHFK8Nwa8FNxz/CqXMABdRnGqN+0q6dh4jlI9RbTtZ/H7YLHaP9Ts5XA2xkvP//Nt2BuGpgEhk=",
+    "expiration": "2026-05-15T08:24:30.000Z"
+  },
+  "name": "kol-satmar",
+  "path": "/home/ubuntu/kol-satmar",
+  "port": 3000,
+  "secrets": {
+    "BUILT_IN_FORGE_API_KEY": "ReaXrZMK35knsGXw6AscZT",
+    "BUILT_IN_FORGE_API_URL": "https://forge.manus.ai",
+    "JWT_SECRET": "6JpQFu3Z8gxaNHKnwQBJLW",
+    "OAUTH_SERVER_URL": "https://api.manus.im",
+    "OWNER_NAME": "kolsatmar",
+    "OWNER_OPEN_ID": "JkrThbwRbGah5DmUZAGiSb",
+    "VITE_ANALYTICS_ENDPOINT": "https://manus-analytics.com",
+    "VITE_ANALYTICS_WEBSITE_ID": "6e49e5b0-93a9-40f8-a061-4b36292ddaec",
+    "VITE_APP_ID": "NgsyRHxn8VbGTvVQUBAgFa",
+    "VITE_APP_LOGO": "",
+    "VITE_APP_TITLE": "קול סאטמאר - Kol Satmar Hotline",
+    "VITE_FRONTEND_FORGE_API_KEY": "JccTzJn5qPcYapcLM6A9qj",
+    "VITE_FRONTEND_FORGE_API_URL": "https://forge.manus.ai",
+    "VITE_OAUTH_PORTAL_URL": "https://manus.im"
+  },
+  "template_id": "web-static",
+  "test_command": "pnpm test"
+}
