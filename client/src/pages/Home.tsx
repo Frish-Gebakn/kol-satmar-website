@@ -406,54 +406,52 @@ export default function Home() {
         className="relative z-10 py-10 px-4 border-t"
         style={{ borderColor: "oklch(0.58 0.13 75 / 25%)", background: "oklch(0.95 0.018 85 / 90%)" }}
       >
-        <div className="max-w-4xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-            {/* About */}
-            <div className="text-center md:text-right" dir="rtl">
-              <h4 className="font-hebrew text-base font-bold text-gold mb-3">וועגן קול סאטמאר</h4>
-              <p className="font-hebrew text-sm text-[oklch(0.35_0.03_60)] leading-relaxed">
-                קול סאטמאר איז א האטליין סערוויס פאר חסידי סאטמאר. סאבסקריבערס באקומען SMS אלערטס ווען עס ווערט אויפגעשטעלט א נייע שיעור, קהילה אפדעיט, אדער שינוי אין סקעדזשול.
+        <div className="max-w-5xl mx-auto">
+
+          {/* Top row: logo center + contact on sides */}
+          <div className="flex flex-col md:flex-row items-center justify-between gap-8 mb-8">
+
+            {/* Contact Left */}
+            <div className="flex flex-col items-center md:items-start gap-2 flex-1">
+              <h4 className="font-cinzel text-sm font-bold text-gold mb-1 tracking-wider">Contact Us</h4>
+              <a
+                href="mailto:support@kolsatmar.org"
+                className="font-lora text-sm text-[oklch(0.40_0.04_60)] hover:text-[oklch(0.45_0.13_75)] transition-colors"
+              >
+                support@kolsatmar.org
+              </a>
+              <a
+                href="tel:18454442738"
+                className="font-cinzel text-sm text-[oklch(0.40_0.04_60)] hover:text-[oklch(0.45_0.13_75)] transition-colors tracking-wider"
+              >
+                1-845-444-2738
+              </a>
+              <p className="font-lora text-xs text-[oklch(0.55_0.03_60)] mt-1">
+                Operated by Lipa Goldberger
               </p>
             </div>
 
             {/* Logo center */}
-            <div className="flex flex-col items-center justify-center">
+            <div className="flex flex-col items-center justify-center flex-shrink-0">
               <img
                 src="/manus-storage/kol-satmar-logo_39731f91.png"
                 alt="קול סאטמאר"
-                className="w-32 opacity-70"
+                className="w-36 opacity-75"
               />
             </div>
 
-            {/* Contact */}
-            <div className="text-center md:text-left">
-              <h4 className="font-cinzel text-sm font-bold text-gold mb-3 tracking-wider">Contact Us</h4>
-              <div className="space-y-2">
-                <a
-                  href="mailto:support@kolsatmar.org"
-                  className="block font-lora text-sm text-[oklch(0.40_0.04_60)] hover:text-[oklch(0.45_0.13_75)] transition-colors"
-                >
-                  support@kolsatmar.org
-                </a>
-                <a
-                  href="tel:18454442738"
-                  className="block font-cinzel text-sm text-[oklch(0.40_0.04_60)] hover:text-[oklch(0.45_0.13_75)] transition-colors"
-                >
-                  1-845-444-2738
-                </a>
-                <p className="font-lora text-xs text-[oklch(0.55_0.03_60)] mt-3">
-                  Operated by Lipa Goldberger
-                </p>
-              </div>
+            {/* Privacy Right */}
+            <div className="flex flex-col items-center md:items-end gap-2 flex-1">
+              <h4 className="font-cinzel text-sm font-bold text-gold mb-1 tracking-wider">Privacy Policy</h4>
+              <p className="font-lora text-xs text-[oklch(0.50_0.03_60)] leading-relaxed text-center md:text-right max-w-xs">
+                No mobile information will be shared with third parties/affiliates for marketing/promotional purposes. Text messaging originator opt-in data and consent will not be shared with any third parties.
+              </p>
             </div>
           </div>
 
-          {/* Privacy policy */}
-          <div className="gold-divider mb-6" />
+          {/* Divider + copyright */}
+          <div className="gold-divider mb-5" />
           <div className="text-center">
-            <p className="font-lora text-xs text-[oklch(0.50_0.03_60)] max-w-2xl mx-auto leading-relaxed mb-3">
-              No mobile information will be shared with third parties/affiliates for marketing/promotional purposes. All the above categories exclude text messaging originator opt-in data and consent; this information will not be shared with any third parties.
-            </p>
             <p className="font-cinzel text-xs text-[oklch(0.45_0.03_60)] tracking-wider">
               © 2026 קול סאטמאר · Kol Satmar · All Rights Reserved
             </p>
