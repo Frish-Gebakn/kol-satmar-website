@@ -220,23 +220,6 @@ export default function Home() {
           />
         </div>
 
-        {/* Tagline */}
-        <div
-          style={{
-            opacity: heroVisible ? 1 : 0,
-            transform: heroVisible ? "translateY(0)" : "translateY(20px)",
-            transition: "opacity 0.8s cubic-bezier(0.23,1,0.32,1) 400ms, transform 0.8s cubic-bezier(0.23,1,0.32,1) 400ms",
-          }}
-          className="mb-2"
-        >
-          <p
-            className="font-cinzel text-xs sm:text-sm tracking-[0.3em] uppercase text-[oklch(0.52_0.05_78)]"
-          >
-            Community Notifications &amp; Updates
-          </p>
-          <div className="gold-divider max-w-xs mx-auto mt-3" />
-        </div>
-
         {/* Central phone number — big CTA */}
         <div
           style={{
