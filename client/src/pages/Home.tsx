@@ -89,13 +89,13 @@ function useInView(threshold = 0.15) {
 function GoldDivider() {
   return (
     <div className="flex items-center justify-center gap-3 my-2">
-      <div className="h-px flex-1 bg-gradient-to-r from-transparent to-[oklch(0.72_0.12_85/60%)]" />
+      <div className="h-px flex-1 bg-gradient-to-r from-transparent to-[oklch(0.58_0.13_75/60%)]" />
       <svg width="32" height="16" viewBox="0 0 32 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M16 2 L20 8 L16 14 L12 8 Z" fill="oklch(0.72 0.12 85)" opacity="0.8"/>
-        <circle cx="4" cy="8" r="2" fill="oklch(0.72 0.12 85)" opacity="0.5"/>
-        <circle cx="28" cy="8" r="2" fill="oklch(0.72 0.12 85)" opacity="0.5"/>
+        <path d="M16 2 L20 8 L16 14 L12 8 Z" fill="oklch(0.58 0.13 75)" opacity="0.8"/>
+        <circle cx="4" cy="8" r="2" fill="oklch(0.58 0.13 75)" opacity="0.5"/>
+        <circle cx="28" cy="8" r="2" fill="oklch(0.58 0.13 75)" opacity="0.5"/>
       </svg>
-      <div className="h-px flex-1 bg-gradient-to-l from-transparent to-[oklch(0.72_0.12_85/60%)]" />
+      <div className="h-px flex-1 bg-gradient-to-l from-transparent to-[oklch(0.58_0.13_75/60%)]" />
     </div>
   );
 }
@@ -116,7 +116,7 @@ function PhoneCard({
 }) {
   return (
     <div
-      className="phone-card rounded-lg p-5 flex flex-col items-center gap-3 bg-[oklch(0.13_0.015_250)] relative overflow-hidden"
+      className="phone-card rounded-lg p-5 flex flex-col items-center gap-3 bg-white/80 backdrop-blur-sm relative overflow-hidden shadow-sm"
       style={{
         opacity: inView ? 1 : 0,
         transform: inView ? "translateY(0)" : "translateY(24px)",
@@ -124,14 +124,14 @@ function PhoneCard({
       }}
     >
       {/* Subtle corner accent */}
-      <div className="absolute top-0 right-0 w-8 h-8 opacity-20">
+      <div className="absolute top-0 right-0 w-8 h-8 opacity-30">
         <svg viewBox="0 0 32 32" fill="none">
-          <path d="M0 0 L32 0 L32 32" fill="oklch(0.72 0.12 85)" />
+          <path d="M0 0 L32 0 L32 32" fill="oklch(0.58 0.13 75)" />
         </svg>
       </div>
-      <div className="absolute bottom-0 left-0 w-8 h-8 opacity-20">
+      <div className="absolute bottom-0 left-0 w-8 h-8 opacity-30">
         <svg viewBox="0 0 32 32" fill="none">
-          <path d="M32 32 L0 32 L0 0" fill="oklch(0.72 0.12 85)" />
+          <path d="M32 32 L0 32 L0 0" fill="oklch(0.58 0.13 75)" />
         </svg>
       </div>
 
@@ -142,7 +142,7 @@ function PhoneCard({
         >
           {region}
         </h3>
-        <p className="font-cinzel text-xs text-[oklch(0.60_0.05_85)] tracking-widest uppercase mt-0.5">
+        <p className="font-cinzel text-xs text-[oklch(0.50_0.04_75)] tracking-widest uppercase mt-0.5">
           {regionEn}
         </p>
       </div>
@@ -154,7 +154,7 @@ function PhoneCard({
           <a
             key={n.tel}
             href={`tel:${n.tel}`}
-            className="font-cinzel text-base font-semibold text-[oklch(0.85_0.10_85)] hover:text-[oklch(0.95_0.10_85)] transition-colors duration-150 tracking-wider hover:scale-105 active:scale-95 transition-transform"
+            className="font-cinzel text-base font-semibold text-[oklch(0.45_0.13_75)] hover:text-[oklch(0.35_0.13_75)] transition-colors duration-150 tracking-wider hover:scale-105 active:scale-95 transition-transform"
             style={{ direction: "ltr", display: "block" }}
           >
             {n.number}
@@ -182,7 +182,7 @@ export default function Home() {
     <div
       className="min-h-screen flex flex-col"
       style={{
-        background: "oklch(0.10 0.015 250)",
+        background: "oklch(0.92 0.02 85)",
         backgroundImage: `url('https://d2xsxph8kpxj0f.cloudfront.net/96842623/NgsyRHxn8VbGTvVQUBAgFa/hero-bg-koGQpzHHLTVdkYrCNLNesK.webp')`,
         backgroundSize: "cover",
         backgroundPosition: "center",
@@ -194,7 +194,7 @@ export default function Home() {
         className="fixed inset-0 pointer-events-none z-0"
         style={{
           background:
-            "linear-gradient(180deg, oklch(0.08 0.015 250 / 85%) 0%, oklch(0.10 0.015 250 / 75%) 50%, oklch(0.08 0.015 250 / 90%) 100%)",
+            "linear-gradient(180deg, oklch(0.96 0.03 85 / 82%) 0%, oklch(0.94 0.03 85 / 72%) 50%, oklch(0.93 0.03 85 / 88%) 100%)",
         }}
       />
 
@@ -203,19 +203,6 @@ export default function Home() {
         ref={heroRef}
         className="relative z-10 flex flex-col items-center justify-center min-h-[100dvh] px-4 py-16 text-center"
       >
-        {/* Badge */}
-        <div
-          style={{
-            opacity: heroVisible ? 1 : 0,
-            transition: "opacity 0.6s ease 200ms",
-          }}
-          className="mb-4"
-        >
-          <span className="font-cinzel text-xs tracking-[0.4em] uppercase px-4 py-1.5 rounded-full border text-[oklch(0.72_0.12_85)] border-[oklch(0.72_0.12_85/40%)] bg-[oklch(0.72_0.12_85/8%)]">
-            Hotline Alerts
-          </span>
-        </div>
-
         {/* Emblem */}
         <div
           className="emblem-glow mb-4 md:mb-6"
@@ -229,7 +216,7 @@ export default function Home() {
             src="/manus-storage/kol-satmar-logo_39731f91.png"
             alt="קול סאטמאר סימבאל"
             className="w-[280px] sm:w-[360px] md:w-[440px] lg:w-[520px] max-w-full"
-            style={{ filter: "drop-shadow(0 0 30px oklch(0.72 0.12 85 / 50%))" }}
+            style={{ filter: "drop-shadow(0 0 25px oklch(0.58 0.13 75 / 40%))" }}
           />
         </div>
 
@@ -243,7 +230,7 @@ export default function Home() {
           className="mb-2"
         >
           <p
-            className="font-cinzel text-xs sm:text-sm tracking-[0.3em] uppercase text-[oklch(0.60_0.05_85)]"
+            className="font-cinzel text-xs sm:text-sm tracking-[0.3em] uppercase text-[oklch(0.45_0.04_75)]"
           >
             Community Notifications &amp; Updates
           </p>
@@ -259,12 +246,12 @@ export default function Home() {
           }}
         >
           <div className="mb-2">
-            <span
-              className="font-hebrew text-sm text-[oklch(0.72_0.12_85/80%)]"
-              dir="rtl"
-            >
-              צענטראלע נומער
-            </span>
+          <span
+            className="font-hebrew text-sm text-[oklch(0.50_0.10_75)]"
+            dir="rtl"
+          >
+            צענטראלע נומער
+          </span>
           </div>
           <a
             href="tel:+16056157777"
@@ -283,7 +270,7 @@ export default function Home() {
             transition: "opacity 1s ease 1.2s",
           }}
         >
-          <div className="flex flex-col items-center gap-1 text-[oklch(0.72_0.12_85)]">
+          <div             className="flex flex-col items-center gap-1 text-[oklch(0.50_0.10_75)]">
             <span className="font-hebrew text-xs" dir="rtl">דריקט ארונטער</span>
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" className="animate-bounce">
               <path d="M10 4 L10 16 M5 11 L10 16 L15 11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
@@ -297,7 +284,7 @@ export default function Home() {
         ref={numbersRef}
         className="relative z-10 py-16 px-4"
         style={{
-          background: "oklch(0.08 0.015 250 / 80%)",
+          background: "oklch(0.90 0.025 85 / 80%)",
         }}
       >
         <div className="max-w-5xl mx-auto">
@@ -309,7 +296,7 @@ export default function Home() {
             >
               לאקאלע נומערן
             </h2>
-            <p className="font-cinzel text-xs tracking-[0.25em] uppercase text-[oklch(0.55_0.05_85)]">
+            <p             className="font-cinzel text-xs tracking-[0.25em] uppercase text-[oklch(0.45_0.04_75)]">
               Local Numbers Worldwide
             </p>
             <GoldDivider />
@@ -352,7 +339,7 @@ export default function Home() {
               >
                 הערט קול סאטמאר אנליין
               </h2>
-              <p className="font-cinzel text-xs tracking-[0.2em] uppercase text-[oklch(0.55_0.05_85)]">
+              <p             className="font-cinzel text-xs tracking-[0.2em] uppercase text-[oklch(0.45_0.04_75)]">
                 Listen to Kol Satmar Online
               </p>
             </div>
@@ -380,7 +367,7 @@ export default function Home() {
         ref={updatesRef}
         className="relative z-10 py-14 px-4"
         style={{
-          background: "oklch(0.08 0.015 250 / 80%)",
+          background: "oklch(0.90 0.025 85 / 80%)",
         }}
       >
         <div className="max-w-2xl mx-auto text-center">
@@ -397,14 +384,14 @@ export default function Home() {
             >
               אפדעיטס
             </h2>
-            <p className="font-cinzel text-xs tracking-[0.2em] uppercase text-[oklch(0.55_0.05_85)] mb-6">
+            <p             className="font-cinzel text-xs tracking-[0.2em] uppercase text-[oklch(0.45_0.04_75)] mb-6">
               Latest Updates
             </p>
             <GoldDivider />
             <div className="mt-6">
               <a
                 href="https://kolsatmar.org/#updates"
-                className="inline-block font-hebrew text-lg text-[oklch(0.85_0.10_85)] hover:text-gold transition-colors duration-200 border border-[oklch(0.72_0.12_85/40%)] hover:border-[oklch(0.72_0.12_85/80%)] px-6 py-3 rounded-lg"
+                className="inline-block font-hebrew text-lg text-[oklch(0.45_0.13_75)] hover:text-[oklch(0.35_0.13_75)] transition-colors duration-200 border border-[oklch(0.58_0.13_75/40%)] hover:border-[oklch(0.58_0.13_75/80%)] px-6 py-3 rounded-lg bg-white/60 hover:bg-white/80"
                 dir="rtl"
               >
                 דריקט דא צו זען די לעצטע אפדעיטס ←
@@ -417,14 +404,14 @@ export default function Home() {
       {/* ===== FOOTER ===== */}
       <footer
         className="relative z-10 py-10 px-4 border-t"
-        style={{ borderColor: "oklch(0.72 0.12 85 / 20%)" }}
+        style={{ borderColor: "oklch(0.58 0.13 75 / 25%)", background: "oklch(0.95 0.018 85 / 90%)" }}
       >
         <div className="max-w-4xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
             {/* About */}
             <div className="text-center md:text-right" dir="rtl">
               <h4 className="font-hebrew text-base font-bold text-gold mb-3">וועגן קול סאטמאר</h4>
-              <p className="font-hebrew text-sm text-[oklch(0.60_0.05_85)] leading-relaxed">
+              <p className="font-hebrew text-sm text-[oklch(0.35_0.03_60)] leading-relaxed">
                 קול סאטמאר איז א האטליין סערוויס פאר חסידי סאטמאר. סאבסקריבערס באקומען SMS אלערטס ווען עס ווערט אויפגעשטעלט א נייע שיעור, קהילה אפדעיט, אדער שינוי אין סקעדזשול.
               </p>
             </div>
@@ -444,17 +431,17 @@ export default function Home() {
               <div className="space-y-2">
                 <a
                   href="mailto:support@kolsatmar.org"
-                  className="block font-lora text-sm text-[oklch(0.60_0.05_85)] hover:text-gold transition-colors"
+                  className="block font-lora text-sm text-[oklch(0.40_0.04_60)] hover:text-[oklch(0.45_0.13_75)] transition-colors"
                 >
                   support@kolsatmar.org
                 </a>
                 <a
                   href="tel:18454442738"
-                  className="block font-cinzel text-sm text-[oklch(0.60_0.05_85)] hover:text-gold transition-colors"
+                  className="block font-cinzel text-sm text-[oklch(0.40_0.04_60)] hover:text-[oklch(0.45_0.13_75)] transition-colors"
                 >
                   1-845-444-2738
                 </a>
-                <p className="font-lora text-xs text-[oklch(0.45_0.04_85)] mt-3">
+                <p className="font-lora text-xs text-[oklch(0.55_0.03_60)] mt-3">
                   Operated by Lipa Goldberger
                 </p>
               </div>
@@ -464,10 +451,10 @@ export default function Home() {
           {/* Privacy policy */}
           <div className="gold-divider mb-6" />
           <div className="text-center">
-            <p className="font-lora text-xs text-[oklch(0.40_0.03_85)] max-w-2xl mx-auto leading-relaxed mb-3">
+            <p className="font-lora text-xs text-[oklch(0.50_0.03_60)] max-w-2xl mx-auto leading-relaxed mb-3">
               No mobile information will be shared with third parties/affiliates for marketing/promotional purposes. All the above categories exclude text messaging originator opt-in data and consent; this information will not be shared with any third parties.
             </p>
-            <p className="font-cinzel text-xs text-[oklch(0.35_0.03_85)] tracking-wider">
+            <p className="font-cinzel text-xs text-[oklch(0.45_0.03_60)] tracking-wider">
               © 2026 קול סאטמאר · Kol Satmar · All Rights Reserved
             </p>
           </div>
