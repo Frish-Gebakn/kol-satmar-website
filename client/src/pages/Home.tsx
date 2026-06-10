@@ -7,7 +7,7 @@
 
 import { useEffect, useRef, useState } from "react";
 
-const LOGO_URL = "https://i.imgur.com/9W3IfMC.png";
+const LOGO_URL = "https://i.imgur.com/k6KprMX.png";
 
 const localNumbers = [
   {
@@ -210,19 +210,7 @@ export default function Home() {
           />
         </div>
 
-        {/* Tagline */}
-        <p
-          className="font-hebrew text-lg sm:text-xl text-[oklch(0.74_0.06_84)] mb-7 tracking-wide"
-          dir="rtl"
-          style={{
-            opacity: heroVisible ? 1 : 0,
-            transform: heroVisible ? "translateY(0)" : "translateY(16px)",
-            transition:
-              "opacity 0.8s cubic-bezier(0.23,1,0.32,1) 350ms, transform 0.8s cubic-bezier(0.23,1,0.32,1) 350ms",
-          }}
-        >
-          די צענטראלע פלאטפארמע פאר חסידי סאטמאר
-        </p>
+
 
         {/* Central phone number — big CTA */}
         <div
@@ -233,14 +221,7 @@ export default function Home() {
               "opacity 0.8s cubic-bezier(0.23,1,0.32,1) 600ms, transform 0.8s cubic-bezier(0.23,1,0.32,1) 600ms",
           }}
         >
-          <div className="mb-3">
-            <span
-              className="font-hebrew text-sm tracking-[0.3em] text-[oklch(0.66_0.08_84)]"
-              dir="rtl"
-            >
-              ✦ צענטראלע נומער ✦
-            </span>
-          </div>
+
           <a
             href="tel:+16056157777"
             className="btn-gold inline-block font-cinzel text-3xl sm:text-4xl md:text-5xl font-bold tracking-widest px-9 py-4 rounded-lg"
