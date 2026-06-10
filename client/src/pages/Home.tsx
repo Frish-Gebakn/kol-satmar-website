@@ -1,16 +1,13 @@
 /**
- * KOL SATMAR — Home Page
- * Design: Royal Dark Elegance — deep navy-black + luminous gold
- * Fonts: Frank Ruhl Libre (Hebrew) + Cinzel (English/numbers) + Lora (body)
- * Logo: Ornate Satmar emblem with palm trees and golden crown
+ * KOL SATMAR — Home Page (v2)
+ * Design: Royal Dark Elegance — deep midnight + luminous gold
+ * The official emblem (gold crown + palms) is the dramatic hero centerpiece,
+ * echoed by ambient gold glows and ornate gold detailing throughout.
  */
 
 import { useEffect, useRef, useState } from "react";
 
-// Phone number data
-const centralNumbers = [
-  { number: "605-615-7777", tel: "+16056157777", label: "מרכזי" },
-];
+const LOGO_URL = "https://i.imgur.com/9W3IfMC.png";
 
 const localNumbers = [
   {
@@ -85,22 +82,22 @@ function useInView(threshold = 0.15) {
   return { ref, inView };
 }
 
-// Gold ornamental divider SVG
+// Gold ornamental divider
 function GoldDivider() {
   return (
     <div className="flex items-center justify-center gap-3 my-2">
-      <div className="h-px flex-1 bg-gradient-to-r from-transparent to-[oklch(0.58_0.13_75/60%)]" />
-      <svg width="32" height="16" viewBox="0 0 32 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M16 2 L20 8 L16 14 L12 8 Z" fill="oklch(0.58 0.13 75)" opacity="0.8"/>
-        <circle cx="4" cy="8" r="2" fill="oklch(0.58 0.13 75)" opacity="0.5"/>
-        <circle cx="28" cy="8" r="2" fill="oklch(0.58 0.13 75)" opacity="0.5"/>
+      <div className="h-px flex-1 bg-gradient-to-r from-transparent to-[oklch(0.72_0.12_84/65%)]" />
+      <svg width="36" height="16" viewBox="0 0 36 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M18 2 L22 8 L18 14 L14 8 Z" fill="oklch(0.78 0.12 86)" opacity="0.85" />
+        <circle cx="5" cy="8" r="2" fill="oklch(0.72 0.12 84)" opacity="0.5" />
+        <circle cx="31" cy="8" r="2" fill="oklch(0.72 0.12 84)" opacity="0.5" />
       </svg>
-      <div className="h-px flex-1 bg-gradient-to-l from-transparent to-[oklch(0.58_0.13_75/60%)]" />
+      <div className="h-px flex-1 bg-gradient-to-l from-transparent to-[oklch(0.72_0.12_84/65%)]" />
     </div>
   );
 }
 
-// Phone number card component
+// Phone number card
 function PhoneCard({
   region,
   regionEn,
@@ -116,33 +113,30 @@ function PhoneCard({
 }) {
   return (
     <div
-      className="phone-card rounded-lg p-5 flex flex-col items-center gap-3 bg-white/90 backdrop-blur-sm relative overflow-hidden shadow-[0_1px_8px_oklch(0_0_0/6%)]"
+      className="phone-card rounded-lg p-5 flex flex-col items-center gap-3 relative overflow-hidden"
       style={{
         opacity: inView ? 1 : 0,
         transform: inView ? "translateY(0)" : "translateY(24px)",
-        transition: `opacity 0.6s cubic-bezier(0.23,1,0.32,1) ${delay}ms, transform 0.6s cubic-bezier(0.23,1,0.32,1) ${delay}ms`,
+        transition: `opacity 0.6s cubic-bezier(0.23,1,0.32,1) ${delay}ms, transform 0.6s cubic-bezier(0.23,1,0.32,1) ${delay}ms, border-color 220ms, box-shadow 220ms`,
       }}
     >
-      {/* Subtle corner accent */}
-      <div className="absolute top-0 right-0 w-8 h-8 opacity-20">
-        <svg viewBox="0 0 32 32" fill="none">
-          <path d="M0 0 L32 0 L32 32" fill="oklch(0.65 0.09 78)" />
+      {/* Gold corner accents */}
+      <div className="absolute top-0 right-0 w-7 h-7 opacity-30 pointer-events-none">
+        <svg viewBox="0 0 28 28" fill="none">
+          <path d="M28 0 L28 10 M28 0 L18 0" stroke="oklch(0.72 0.12 84)" strokeWidth="2" />
         </svg>
       </div>
-      <div className="absolute bottom-0 left-0 w-8 h-8 opacity-20">
-        <svg viewBox="0 0 32 32" fill="none">
-          <path d="M32 32 L0 32 L0 0" fill="oklch(0.65 0.09 78)" />
+      <div className="absolute bottom-0 left-0 w-7 h-7 opacity-30 pointer-events-none">
+        <svg viewBox="0 0 28 28" fill="none">
+          <path d="M0 28 L0 18 M0 28 L10 28" stroke="oklch(0.72 0.12 84)" strokeWidth="2" />
         </svg>
       </div>
 
       <div className="text-center">
-        <h3
-          className="font-hebrew text-lg font-bold text-gold leading-tight"
-          dir="rtl"
-        >
+        <h3 className="font-hebrew text-lg font-bold text-gold-light leading-tight" dir="rtl">
           {region}
         </h3>
-        <p className="font-cinzel text-xs text-[oklch(0.55_0.05_78)] tracking-widest uppercase mt-0.5">
+        <p className="font-cinzel text-xs text-[oklch(0.62_0.05_82)] tracking-widest uppercase mt-0.5">
           {regionEn}
         </p>
       </div>
@@ -154,7 +148,7 @@ function PhoneCard({
           <a
             key={n.tel}
             href={`tel:${n.tel}`}
-            className="font-cinzel text-base font-semibold text-[oklch(0.48_0.09_78)] hover:text-[oklch(0.38_0.09_78)] transition-colors duration-150 tracking-wider hover:scale-105 active:scale-95 transition-transform"
+            className="font-cinzel text-base font-semibold text-[oklch(0.80_0.10_86)] hover:text-[oklch(0.88_0.10_90)] tracking-wider transition-all duration-150 hover:scale-105 active:scale-95"
             style={{ direction: "ltr", display: "block" }}
           >
             {n.number}
@@ -173,7 +167,6 @@ export default function Home() {
   const { ref: updatesRef, inView: updatesInView } = useInView(0.3);
 
   useEffect(() => {
-    // Trigger hero animation on mount
     const t = setTimeout(() => setHeroVisible(true), 100);
     return () => clearTimeout(t);
   }, []);
@@ -181,20 +174,17 @@ export default function Home() {
   return (
     <div
       className="min-h-screen flex flex-col"
-      style={{
-        background: "oklch(0.99 0.006 80)",
-        backgroundImage: `url('https://d2xsxph8kpxj0f.cloudfront.net/96842623/NgsyRHxn8VbGTvVQUBAgFa/hero-bg-koGQpzHHLTVdkYrCNLNesK.webp')`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundAttachment: "fixed",
-      }}
+      style={{ background: "oklch(0.16 0.015 70)" }}
     >
-      {/* Overlay for readability */}
+      {/* Ambient gold glows */}
       <div
         className="fixed inset-0 pointer-events-none z-0"
         style={{
-          background:
-            "linear-gradient(180deg, oklch(1.0 0.003 80 / 96%) 0%, oklch(1.0 0.003 80 / 93%) 40%, oklch(0.99 0.005 80 / 90%) 70%, oklch(0.99 0.006 80 / 92%) 100%)",
+          background: `
+            radial-gradient(900px 520px at 50% -8%, oklch(0.72 0.12 84 / 13%), transparent 65%),
+            radial-gradient(700px 600px at 108% 102%, oklch(0.72 0.12 84 / 6%), transparent 60%),
+            radial-gradient(700px 600px at -8% 102%, oklch(0.72 0.12 84 / 6%), transparent 60%)
+          `,
         }}
       />
 
@@ -205,40 +195,55 @@ export default function Home() {
       >
         {/* Emblem */}
         <div
-          className="emblem-glow mb-4 md:mb-6"
+          className="emblem-glow mb-5 md:mb-7"
           style={{
             opacity: heroVisible ? 1 : 0,
-            transform: heroVisible ? "scale(1)" : "scale(0.92)",
-            transition: "opacity 0.9s cubic-bezier(0.23,1,0.32,1), transform 0.9s cubic-bezier(0.23,1,0.32,1)",
+            transform: heroVisible ? "scale(1)" : "scale(0.93)",
+            transition:
+              "opacity 0.9s cubic-bezier(0.23,1,0.32,1), transform 0.9s cubic-bezier(0.23,1,0.32,1)",
           }}
         >
           <img
-            src="https://i.imgur.com/9W3IfMC.png"
-            alt="קול סאטמאר סימבאל"
-            className="w-[280px] sm:w-[360px] md:w-[440px] lg:w-[520px] max-w-full"
-            style={{ filter: "drop-shadow(0 0 20px oklch(0.65 0.09 78 / 30%))" }}
+            src={LOGO_URL}
+            alt="קול סאטמאר — אפיציעלער סימבאל"
+            className="w-[300px] sm:w-[400px] md:w-[500px] lg:w-[580px] max-w-full"
           />
         </div>
+
+        {/* Tagline */}
+        <p
+          className="font-hebrew text-lg sm:text-xl text-[oklch(0.74_0.06_84)] mb-7 tracking-wide"
+          dir="rtl"
+          style={{
+            opacity: heroVisible ? 1 : 0,
+            transform: heroVisible ? "translateY(0)" : "translateY(16px)",
+            transition:
+              "opacity 0.8s cubic-bezier(0.23,1,0.32,1) 350ms, transform 0.8s cubic-bezier(0.23,1,0.32,1) 350ms",
+          }}
+        >
+          די צענטראלע פלאטפארמע פאר חסידי סאטמאר
+        </p>
 
         {/* Central phone number — big CTA */}
         <div
           style={{
             opacity: heroVisible ? 1 : 0,
             transform: heroVisible ? "translateY(0)" : "translateY(20px)",
-            transition: "opacity 0.8s cubic-bezier(0.23,1,0.32,1) 600ms, transform 0.8s cubic-bezier(0.23,1,0.32,1) 600ms",
+            transition:
+              "opacity 0.8s cubic-bezier(0.23,1,0.32,1) 600ms, transform 0.8s cubic-bezier(0.23,1,0.32,1) 600ms",
           }}
         >
-          <div className="mb-2">
-          <span
-            className="font-hebrew text-sm text-[oklch(0.52_0.07_78)]"
-            dir="rtl"
-          >
-            צענטראלע נומער
-          </span>
+          <div className="mb-3">
+            <span
+              className="font-hebrew text-sm tracking-[0.3em] text-[oklch(0.66_0.08_84)]"
+              dir="rtl"
+            >
+              ✦ צענטראלע נומער ✦
+            </span>
           </div>
           <a
             href="tel:+16056157777"
-            className="btn-gold inline-block font-cinzel text-3xl sm:text-4xl md:text-5xl font-bold tracking-widest px-8 py-4 rounded-lg"
+            className="btn-gold inline-block font-cinzel text-3xl sm:text-4xl md:text-5xl font-bold tracking-widest px-9 py-4 rounded-lg"
             style={{ direction: "ltr" }}
           >
             605-615-7777
@@ -249,14 +254,22 @@ export default function Home() {
         <div
           className="absolute bottom-8 left-1/2 -translate-x-1/2"
           style={{
-            opacity: heroVisible ? 0.5 : 0,
+            opacity: heroVisible ? 0.55 : 0,
             transition: "opacity 1s ease 1.2s",
           }}
         >
-          <div             className="flex flex-col items-center gap-1 text-[oklch(0.55_0.07_78)]">
-            <span className="font-hebrew text-xs" dir="rtl">דריקט ארונטער</span>
+          <div className="flex flex-col items-center gap-1 text-[oklch(0.68_0.09_84)]">
+            <span className="font-hebrew text-xs" dir="rtl">
+              דריקט ארונטער
+            </span>
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" className="animate-bounce">
-              <path d="M10 4 L10 16 M5 11 L10 16 L15 11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              <path
+                d="M10 4 L10 16 M5 11 L10 16 L15 11"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
             </svg>
           </div>
         </div>
@@ -267,25 +280,22 @@ export default function Home() {
         ref={numbersRef}
         className="relative z-10 py-16 px-4"
         style={{
-          background: "oklch(0.97 0.008 80 / 85%)",
+          background: "oklch(0.185 0.018 72 / 75%)",
+          borderTop: "1px solid oklch(0.72 0.12 84 / 15%)",
+          borderBottom: "1px solid oklch(0.72 0.12 84 / 15%)",
         }}
       >
         <div className="max-w-5xl mx-auto">
-          {/* Section header */}
           <div className="text-center mb-10">
-            <h2
-              className="section-title font-hebrew text-3xl sm:text-4xl font-bold mb-3"
-              dir="rtl"
-            >
+            <h2 className="section-title font-hebrew text-3xl sm:text-4xl font-bold mb-3" dir="rtl">
               לאקאלע נומערן
             </h2>
-            <p             className="font-cinzel text-xs tracking-[0.25em] uppercase text-[oklch(0.52_0.05_78)]">
+            <p className="font-cinzel text-xs tracking-[0.25em] uppercase text-[oklch(0.60_0.05_82)]">
               Local Numbers Worldwide
             </p>
             <GoldDivider />
           </div>
 
-          {/* Grid of phone cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {localNumbers.map((loc, i) => (
               <PhoneCard
@@ -302,27 +312,22 @@ export default function Home() {
       </section>
 
       {/* ===== LISTEN ONLINE SECTION ===== */}
-      <section
-        ref={listenRef}
-        className="relative z-10 py-14 px-4"
-      >
+      <section ref={listenRef} className="relative z-10 py-14 px-4">
         <div className="max-w-2xl mx-auto text-center">
           <div
             style={{
               opacity: listenInView ? 1 : 0,
               transform: listenInView ? "translateY(0)" : "translateY(24px)",
-              transition: "opacity 0.7s cubic-bezier(0.23,1,0.32,1), transform 0.7s cubic-bezier(0.23,1,0.32,1)",
+              transition:
+                "opacity 0.7s cubic-bezier(0.23,1,0.32,1), transform 0.7s cubic-bezier(0.23,1,0.32,1)",
             }}
           >
             <div className="mb-6">
               <div className="gold-divider max-w-xs mx-auto mb-6" />
-              <h2
-                className="font-hebrew text-2xl sm:text-3xl font-bold text-gold mb-2"
-                dir="rtl"
-              >
+              <h2 className="font-hebrew text-2xl sm:text-3xl font-bold text-gold-light mb-2" dir="rtl">
                 הערט קול סאטמאר אנליין
               </h2>
-              <p             className="font-cinzel text-xs tracking-[0.2em] uppercase text-[oklch(0.52_0.05_78)]">
+              <p className="font-cinzel text-xs tracking-[0.2em] uppercase text-[oklch(0.60_0.05_82)]">
                 Listen to Kol Satmar Online
               </p>
             </div>
@@ -334,10 +339,12 @@ export default function Home() {
               className="btn-gold inline-flex items-center gap-3 font-cinzel text-base font-bold px-8 py-4 rounded-lg"
             >
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <circle cx="10" cy="10" r="9" stroke="currentColor" strokeWidth="1.5"/>
-                <path d="M8 6.5 L14 10 L8 13.5 Z" fill="currentColor"/>
+                <circle cx="10" cy="10" r="9" stroke="currentColor" strokeWidth="1.5" />
+                <path d="M8 6.5 L14 10 L8 13.5 Z" fill="currentColor" />
               </svg>
-              <span dir="rtl" className="font-hebrew text-lg">דריקט דא צו הערן</span>
+              <span dir="rtl" className="font-hebrew text-lg">
+                דריקט דא צו הערן
+              </span>
             </a>
 
             <div className="gold-divider max-w-xs mx-auto mt-6" />
@@ -350,7 +357,9 @@ export default function Home() {
         ref={updatesRef}
         className="relative z-10 py-14 px-4"
         style={{
-          background: "oklch(0.97 0.008 80 / 85%)",
+          background: "oklch(0.185 0.018 72 / 75%)",
+          borderTop: "1px solid oklch(0.72 0.12 84 / 15%)",
+          borderBottom: "1px solid oklch(0.72 0.12 84 / 15%)",
         }}
       >
         <div className="max-w-2xl mx-auto text-center">
@@ -358,23 +367,21 @@ export default function Home() {
             style={{
               opacity: updatesInView ? 1 : 0,
               transform: updatesInView ? "translateY(0)" : "translateY(24px)",
-              transition: "opacity 0.7s cubic-bezier(0.23,1,0.32,1), transform 0.7s cubic-bezier(0.23,1,0.32,1)",
+              transition:
+                "opacity 0.7s cubic-bezier(0.23,1,0.32,1), transform 0.7s cubic-bezier(0.23,1,0.32,1)",
             }}
           >
-            <h2
-              className="section-title font-hebrew text-2xl sm:text-3xl font-bold mb-3"
-              dir="rtl"
-            >
+            <h2 className="section-title font-hebrew text-2xl sm:text-3xl font-bold mb-3" dir="rtl">
               אפדעיטס
             </h2>
-            <p             className="font-cinzel text-xs tracking-[0.2em] uppercase text-[oklch(0.52_0.05_78)] mb-6">
+            <p className="font-cinzel text-xs tracking-[0.2em] uppercase text-[oklch(0.60_0.05_82)] mb-6">
               Latest Updates
             </p>
             <GoldDivider />
             <div className="mt-6">
               <a
                 href="https://kolsatmar.org/#updates"
-                className="inline-block font-hebrew text-lg text-[oklch(0.48_0.09_78)] hover:text-[oklch(0.38_0.09_78)] transition-colors duration-200 border border-[oklch(0.65_0.09_78/35%)] hover:border-[oklch(0.65_0.09_78/65%)] px-6 py-3 rounded-lg bg-white/70 hover:bg-white/90"
+                className="btn-gold-outline inline-block font-hebrew text-lg px-7 py-3 rounded-lg"
                 dir="rtl"
               >
                 דריקט דא צו זען די לעצטע אפדעיטס ←
@@ -386,30 +393,32 @@ export default function Home() {
 
       {/* ===== FOOTER ===== */}
       <footer
-        className="relative z-10 py-10 px-4 border-t"
-        style={{ borderColor: "oklch(0.65 0.09 78 / 20%)", background: "oklch(0.99 0.006 80 / 95%)" }}
+        className="relative z-10 py-10 px-4"
+        style={{
+          borderTop: "1px solid oklch(0.72 0.12 84 / 22%)",
+          background: "oklch(0.14 0.013 70)",
+        }}
       >
         <div className="max-w-5xl mx-auto">
-
-          {/* Top row: logo center + contact on sides */}
           <div className="flex flex-col md:flex-row items-center justify-between gap-8 mb-8">
-
             {/* Contact Left */}
             <div className="flex flex-col items-center md:items-start gap-2 flex-1">
-              <h4 className="font-cinzel text-sm font-bold text-gold mb-1 tracking-wider">Contact Us</h4>
+              <h4 className="font-cinzel text-sm font-bold text-gold mb-1 tracking-wider">
+                Contact Us
+              </h4>
               <a
                 href="mailto:support@kolsatmar.org"
-                  className="font-lora text-sm text-[oklch(0.42_0.04_60)] hover:text-[oklch(0.48_0.09_78)] transition-colors"
+                className="text-sm text-[oklch(0.74_0.04_84)] hover:text-gold-light transition-colors"
               >
                 support@kolsatmar.org
               </a>
               <a
                 href="tel:18454442738"
-                  className="font-cinzel text-sm text-[oklch(0.42_0.04_60)] hover:text-[oklch(0.48_0.09_78)] transition-colors tracking-wider"
+                className="font-cinzel text-sm text-[oklch(0.74_0.04_84)] hover:text-gold-light transition-colors tracking-wider"
               >
                 1-845-444-2738
               </a>
-              <p className="font-lora text-xs text-[oklch(0.58_0.025_60)] mt-1">
+              <p className="text-xs text-[oklch(0.58_0.03_82)] mt-1">
                 Operated by Lipa Goldberger
               </p>
             </div>
@@ -417,25 +426,29 @@ export default function Home() {
             {/* Logo center */}
             <div className="flex flex-col items-center justify-center flex-shrink-0">
               <img
-                src="https://i.imgur.com/9W3IfMC.png"
+                src={LOGO_URL}
                 alt="קול סאטמאר"
-                className="w-36 opacity-75"
+                className="w-40 opacity-85"
+                style={{ filter: "drop-shadow(0 0 14px oklch(0.72 0.12 84 / 22%))" }}
               />
             </div>
 
             {/* Privacy Right */}
             <div className="flex flex-col items-center md:items-end gap-2 flex-1">
-              <h4 className="font-cinzel text-sm font-bold text-gold mb-1 tracking-wider">Privacy Policy</h4>
-              <p className="font-lora text-xs text-[oklch(0.52_0.025_60)] leading-relaxed text-center md:text-right max-w-xs">
-                No mobile information will be shared with third parties/affiliates for marketing/promotional purposes. Text messaging originator opt-in data and consent will not be shared with any third parties.
+              <h4 className="font-cinzel text-sm font-bold text-gold mb-1 tracking-wider">
+                Privacy Policy
+              </h4>
+              <p className="text-xs text-[oklch(0.62_0.03_82)] leading-relaxed text-center md:text-right max-w-xs">
+                No mobile information will be shared with third parties/affiliates for
+                marketing/promotional purposes. Text messaging originator opt-in data and consent
+                will not be shared with any third parties.
               </p>
             </div>
           </div>
 
-          {/* Divider + copyright */}
           <div className="gold-divider mb-5" />
           <div className="text-center">
-            <p className="font-cinzel text-xs text-[oklch(0.50_0.025_60)] tracking-wider">
+            <p className="font-cinzel text-xs text-[oklch(0.58_0.04_82)] tracking-wider">
               © 2026 קול סאטמאר · Kol Satmar · All Rights Reserved
             </p>
           </div>

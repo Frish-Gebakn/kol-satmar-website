@@ -1,8 +1,8 @@
 /* ============================================================
-   KOL SATMAR — Royal Dark Elegance Design System
-   Design Movement: Baroque Revival meets Hasidic Heritage
-   Core: Deep dark navy-black + luminous gold + warm cream
-   Fonts: Frank Ruhl Libre (Hebrew headings) + Cinzel (English/numbers)
+   KOL SATMAR — Royal Dark Elegance Design System (v2)
+   Deep midnight brown-black + luminous gold + warm cream
+   Matches the official emblem: gold crown, palms, ornate frame
+   Fonts: Frank Ruhl Libre (Hebrew) + Cinzel (numbers) + Lora (body)
    ============================================================ */
 
 @import "tailwindcss";
@@ -39,40 +39,40 @@
   --color-gold-dark: var(--gold-dark);
 }
 
-  :root {
-  /* Calm White-Gold Palette — soft ivory white + muted warm gold */
-  --gold: oklch(0.65 0.09 78);           /* Muted warm gold — not too loud */
-  --gold-light: oklch(0.74 0.08 78);     /* Soft light gold */
-  --gold-dark: oklch(0.50 0.08 78);      /* Subdued dark gold */
+:root {
+  /* Royal Dark Palette — emblem gold on deep midnight */
+  --gold: oklch(0.72 0.12 84);           /* Luminous emblem gold */
+  --gold-light: oklch(0.82 0.11 88);     /* Bright highlight gold */
+  --gold-dark: oklch(0.55 0.10 80);      /* Burnished shadow gold */
 
   --radius: 0.5rem;
-  --background: oklch(0.99 0.006 80);    /* Pure soft white with tiny warmth */
-  --foreground: oklch(0.28 0.015 60);    /* Warm dark charcoal — readable, not harsh */
-  --card: oklch(1.0 0.004 80);           /* Clean white card */
-  --card-foreground: oklch(0.28 0.015 60);
-  --popover: oklch(1.0 0.004 80);
-  --popover-foreground: oklch(0.28 0.015 60);
-  --primary: oklch(0.65 0.09 78);        /* Muted gold */
-  --primary-foreground: oklch(0.99 0.004 80);
-  --secondary: oklch(0.96 0.008 80);
-  --secondary-foreground: oklch(0.40 0.015 60);
-  --muted: oklch(0.96 0.006 80);
-  --muted-foreground: oklch(0.55 0.012 60);
-  --accent: oklch(0.65 0.09 78);
-  --accent-foreground: oklch(0.99 0.004 80);
+  --background: oklch(0.16 0.015 70);    /* Deep warm midnight */
+  --foreground: oklch(0.92 0.025 85);    /* Warm cream */
+  --card: oklch(0.205 0.02 72);          /* Slightly lifted panel */
+  --card-foreground: oklch(0.92 0.025 85);
+  --popover: oklch(0.205 0.02 72);
+  --popover-foreground: oklch(0.92 0.025 85);
+  --primary: oklch(0.72 0.12 84);
+  --primary-foreground: oklch(0.16 0.015 70);
+  --secondary: oklch(0.24 0.02 72);
+  --secondary-foreground: oklch(0.85 0.03 85);
+  --muted: oklch(0.24 0.02 72);
+  --muted-foreground: oklch(0.68 0.03 82);
+  --accent: oklch(0.72 0.12 84);
+  --accent-foreground: oklch(0.16 0.015 70);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(0.65 0.09 78 / 22%);
-  --input: oklch(0.96 0.006 80);
-  --ring: oklch(0.65 0.09 78 / 40%);
-  --sidebar: oklch(0.99 0.006 80);
-  --sidebar-foreground: oklch(0.28 0.015 60);
-  --sidebar-primary: oklch(0.65 0.09 78);
-  --sidebar-primary-foreground: oklch(0.99 0.004 80);
-  --sidebar-accent: oklch(0.96 0.008 80);
-  --sidebar-accent-foreground: oklch(0.28 0.015 60);
-  --sidebar-border: oklch(0.65 0.09 78 / 15%);
-  --sidebar-ring: oklch(0.65 0.09 78 / 40%);
+  --border: oklch(0.72 0.12 84 / 25%);
+  --input: oklch(0.24 0.02 72);
+  --ring: oklch(0.72 0.12 84 / 45%);
+  --sidebar: oklch(0.16 0.015 70);
+  --sidebar-foreground: oklch(0.92 0.025 85);
+  --sidebar-primary: oklch(0.72 0.12 84);
+  --sidebar-primary-foreground: oklch(0.16 0.015 70);
+  --sidebar-accent: oklch(0.24 0.02 72);
+  --sidebar-accent-foreground: oklch(0.92 0.025 85);
+  --sidebar-border: oklch(0.72 0.12 84 / 18%);
+  --sidebar-ring: oklch(0.72 0.12 84 / 45%);
 }
 
 @layer base {
@@ -131,106 +131,101 @@
     }
   }
 
-  /* Gold text utility */
+  /* Gold text utilities */
   .text-gold {
-    color: oklch(0.62 0.09 78);
+    color: oklch(0.72 0.12 84);
   }
   .text-gold-light {
-    color: oklch(0.72 0.08 78);
+    color: oklch(0.82 0.11 88);
   }
 
   /* Gold gradient text */
   .text-gold-gradient {
-    background: linear-gradient(135deg, oklch(0.72 0.08 78) 0%, oklch(0.62 0.09 78) 40%, oklch(0.50 0.08 78) 100%);
+    background: linear-gradient(135deg, oklch(0.84 0.11 90) 0%, oklch(0.72 0.12 84) 45%, oklch(0.58 0.10 80) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
-  /* Gold border glow */
-  .border-gold {
-    border-color: oklch(0.65 0.09 78 / 50%);
-  }
-  .border-gold-glow {
-    border-color: oklch(0.65 0.09 78);
-    box-shadow: 0 0 10px oklch(0.65 0.09 78 / 20%);
-  }
-
-  /* Gold divider */
+  /* Gold divider line */
   .gold-divider {
     height: 1px;
-    background: linear-gradient(90deg, transparent, oklch(0.65 0.09 78 / 70%), transparent);
+    background: linear-gradient(90deg, transparent, oklch(0.72 0.12 84 / 75%), transparent);
   }
 
-  /* Phone card hover effect */
+  /* Phone card — dark engraved panel with gold edge */
   .phone-card {
-    transition: all 200ms cubic-bezier(0.23, 1, 0.32, 1);
-    border: 1px solid oklch(0.65 0.09 78 / 22%);
+    background: linear-gradient(180deg, oklch(0.225 0.022 74), oklch(0.19 0.018 70));
+    border: 1px solid oklch(0.72 0.12 84 / 22%);
+    transition: all 220ms cubic-bezier(0.23, 1, 0.32, 1);
   }
   .phone-card:hover {
-    border-color: oklch(0.65 0.09 78 / 55%);
-    box-shadow: 0 0 16px oklch(0.65 0.09 78 / 10%), 0 4px 20px oklch(0 0 0 / 7%);
-    transform: translateY(-2px);
+    border-color: oklch(0.72 0.12 84 / 60%);
+    box-shadow:
+      0 0 22px oklch(0.72 0.12 84 / 14%),
+      0 10px 28px oklch(0 0 0 / 45%);
+    transform: translateY(-3px);
   }
 
   /* Emblem glow animation */
   @keyframes emblem-glow {
-    0%, 100% { filter: drop-shadow(0 0 18px oklch(0.65 0.09 78 / 28%)); }
-    50% { filter: drop-shadow(0 0 28px oklch(0.65 0.09 78 / 42%)); }
+    0%, 100% { filter: drop-shadow(0 0 26px oklch(0.72 0.12 84 / 30%)); }
+    50% { filter: drop-shadow(0 0 44px oklch(0.72 0.12 84 / 50%)); }
   }
-
   .emblem-glow {
-    animation: emblem-glow 3s ease-in-out infinite;
+    animation: emblem-glow 3.4s ease-in-out infinite;
   }
 
-  /* Gold shimmer button */
+  /* Gold shimmer CTA button */
   @keyframes gold-shimmer {
     0% { background-position: -200% center; }
     100% { background-position: 200% center; }
   }
-
   .btn-gold {
-    background: linear-gradient(135deg, oklch(0.60 0.09 78), oklch(0.70 0.09 78), oklch(0.60 0.09 78));
+    background: linear-gradient(135deg, oklch(0.60 0.11 80), oklch(0.78 0.12 87), oklch(0.60 0.11 80));
     background-size: 200% auto;
-    color: oklch(0.99 0.004 80);
+    color: oklch(0.17 0.02 70);
     font-weight: 700;
     transition: all 200ms cubic-bezier(0.23, 1, 0.32, 1);
-    box-shadow: 0 2px 12px oklch(0.65 0.09 78 / 25%);
+    box-shadow:
+      0 0 0 1px oklch(0.82 0.11 88 / 45%),
+      0 6px 22px oklch(0.72 0.12 84 / 30%);
   }
   .btn-gold:hover {
     animation: gold-shimmer 1.8s linear infinite;
-    box-shadow: 0 4px 18px oklch(0.65 0.09 78 / 35%);
+    box-shadow:
+      0 0 0 1px oklch(0.82 0.11 88 / 70%),
+      0 8px 30px oklch(0.72 0.12 84 / 45%);
     transform: translateY(-1px);
   }
   .btn-gold:active {
     transform: scale(0.97);
   }
 
-  /* Fade-in animation for sections */
-  @keyframes fade-in-up {
-    from {
-      opacity: 0;
-      transform: translateY(24px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  /* Outlined gold button (secondary actions) */
+  .btn-gold-outline {
+    border: 1px solid oklch(0.72 0.12 84 / 40%);
+    color: oklch(0.82 0.11 88);
+    background: oklch(0.72 0.12 84 / 6%);
+    transition: all 200ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  .btn-gold-outline:hover {
+    border-color: oklch(0.72 0.12 84 / 80%);
+    background: oklch(0.72 0.12 84 / 12%);
+    box-shadow: 0 0 18px oklch(0.72 0.12 84 / 18%);
+  }
+  .btn-gold-outline:active {
+    transform: scale(0.97);
   }
 
+  /* Fade-in animation */
+  @keyframes fade-in-up {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
   .animate-fade-in-up {
     animation: fade-in-up 0.7s cubic-bezier(0.23, 1, 0.32, 1) both;
   }
-
-  /* Stagger delays */
-  .delay-100 { animation-delay: 100ms; }
-  .delay-200 { animation-delay: 200ms; }
-  .delay-300 { animation-delay: 300ms; }
-  .delay-400 { animation-delay: 400ms; }
-  .delay-500 { animation-delay: 500ms; }
-  .delay-600 { animation-delay: 600ms; }
-  .delay-700 { animation-delay: 700ms; }
-  .delay-800 { animation-delay: 800ms; }
 
   /* Hebrew font class */
   .font-hebrew {
@@ -242,20 +237,21 @@
     font-family: 'Cinzel', 'Playfair Display', serif;
   }
 
-  /* Ornate section title */
+  /* Ornate section title with gold diamonds */
   .section-title {
     font-family: 'Frank Ruhl Libre', serif;
-    color: oklch(0.55 0.09 78);
+    color: oklch(0.78 0.12 86);
     text-align: center;
     position: relative;
+    text-shadow: 0 0 22px oklch(0.72 0.12 84 / 25%);
   }
   .section-title::before,
   .section-title::after {
     content: '✦';
     display: inline-block;
     margin: 0 0.75rem;
-    opacity: 0.6;
-    font-size: 0.6em;
+    opacity: 0.55;
+    font-size: 0.55em;
     vertical-align: middle;
   }
 
