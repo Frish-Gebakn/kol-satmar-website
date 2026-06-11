@@ -6,8 +6,9 @@
  */
 
 import { useEffect, useRef, useState } from "react";
+import { LOGO_DATA_URL } from "@/lib/logo";
 
-const LOGO_URL = "https://i.imgur.com/k6KprMX.png";
+const LOGO_URL = LOGO_DATA_URL;
 
 const localNumbers = [
   {
