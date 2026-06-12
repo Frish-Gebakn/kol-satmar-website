@@ -1,6 +1,6 @@
 /* ============================================================
-   KOL SATMAR — Royal Dark Elegance Design System (v2)
-   Deep midnight brown-black + luminous gold + warm cream
+   KOL SATMAR — Royal Light Elegance Design System (v3)
+   Warm ivory parchment + burnished gold + deep brown text
    Matches the official emblem: gold crown, palms, ornate frame
    Fonts: Frank Ruhl Libre (Hebrew) + Cinzel (numbers) + Lora (body)
    ============================================================ */
@@ -40,39 +40,39 @@
 }
 
 :root {
-  /* Royal Dark Palette — emblem gold on deep midnight */
-  --gold: oklch(0.72 0.12 84);           /* Luminous emblem gold */
-  --gold-light: oklch(0.82 0.11 88);     /* Bright highlight gold */
-  --gold-dark: oklch(0.55 0.10 80);      /* Burnished shadow gold */
+  /* Royal Light Palette — parchment ivory + burnished gold */
+  --gold: oklch(0.62 0.12 82);             /* Burnished emblem gold */
+  --gold-light: oklch(0.70 0.13 86);       /* Bright highlight gold */
+  --gold-dark: oklch(0.48 0.10 78);        /* Deep shadow gold */
 
   --radius: 0.5rem;
-  --background: oklch(0.16 0.015 70);    /* Deep warm midnight */
-  --foreground: oklch(0.92 0.025 85);    /* Warm cream */
-  --card: oklch(0.205 0.02 72);          /* Slightly lifted panel */
-  --card-foreground: oklch(0.92 0.025 85);
-  --popover: oklch(0.205 0.02 72);
-  --popover-foreground: oklch(0.92 0.025 85);
-  --primary: oklch(0.72 0.12 84);
-  --primary-foreground: oklch(0.16 0.015 70);
-  --secondary: oklch(0.24 0.02 72);
-  --secondary-foreground: oklch(0.85 0.03 85);
-  --muted: oklch(0.24 0.02 72);
-  --muted-foreground: oklch(0.68 0.03 82);
-  --accent: oklch(0.72 0.12 84);
-  --accent-foreground: oklch(0.16 0.015 70);
+  --background: oklch(0.97 0.008 80);      /* Warm ivory parchment */
+  --foreground: oklch(0.22 0.020 65);      /* Deep warm brown */
+  --card: oklch(0.99 0.005 78);            /* Near-white card */
+  --card-foreground: oklch(0.22 0.020 65);
+  --popover: oklch(0.99 0.005 78);
+  --popover-foreground: oklch(0.22 0.020 65);
+  --primary: oklch(0.62 0.12 82);
+  --primary-foreground: oklch(0.97 0.008 80);
+  --secondary: oklch(0.93 0.012 78);
+  --secondary-foreground: oklch(0.30 0.020 68);
+  --muted: oklch(0.93 0.012 78);
+  --muted-foreground: oklch(0.52 0.030 75);
+  --accent: oklch(0.62 0.12 82);
+  --accent-foreground: oklch(0.97 0.008 80);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(0.72 0.12 84 / 25%);
-  --input: oklch(0.24 0.02 72);
-  --ring: oklch(0.72 0.12 84 / 45%);
-  --sidebar: oklch(0.16 0.015 70);
-  --sidebar-foreground: oklch(0.92 0.025 85);
-  --sidebar-primary: oklch(0.72 0.12 84);
-  --sidebar-primary-foreground: oklch(0.16 0.015 70);
-  --sidebar-accent: oklch(0.24 0.02 72);
-  --sidebar-accent-foreground: oklch(0.92 0.025 85);
-  --sidebar-border: oklch(0.72 0.12 84 / 18%);
-  --sidebar-ring: oklch(0.72 0.12 84 / 45%);
+  --border: oklch(0.62 0.12 82 / 22%);
+  --input: oklch(0.93 0.012 78);
+  --ring: oklch(0.62 0.12 82 / 40%);
+  --sidebar: oklch(0.97 0.008 80);
+  --sidebar-foreground: oklch(0.22 0.020 65);
+  --sidebar-primary: oklch(0.62 0.12 82);
+  --sidebar-primary-foreground: oklch(0.97 0.008 80);
+  --sidebar-accent: oklch(0.93 0.012 78);
+  --sidebar-accent-foreground: oklch(0.22 0.020 65);
+  --sidebar-border: oklch(0.62 0.12 82 / 18%);
+  --sidebar-ring: oklch(0.62 0.12 82 / 40%);
 }
 
 @layer base {
@@ -133,15 +133,15 @@
 
   /* Gold text utilities */
   .text-gold {
-    color: oklch(0.72 0.12 84);
+    color: oklch(0.62 0.12 82);
   }
   .text-gold-light {
-    color: oklch(0.82 0.11 88);
+    color: oklch(0.70 0.13 86);
   }
 
   /* Gold gradient text */
   .text-gold-gradient {
-    background: linear-gradient(135deg, oklch(0.84 0.11 90) 0%, oklch(0.72 0.12 84) 45%, oklch(0.58 0.10 80) 100%);
+    background: linear-gradient(135deg, oklch(0.72 0.13 90) 0%, oklch(0.62 0.12 82) 45%, oklch(0.48 0.10 78) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -150,27 +150,28 @@
   /* Gold divider line */
   .gold-divider {
     height: 1px;
-    background: linear-gradient(90deg, transparent, oklch(0.72 0.12 84 / 75%), transparent);
+    background: linear-gradient(90deg, transparent, oklch(0.62 0.12 82 / 65%), transparent);
   }
 
-  /* Phone card — dark engraved panel with gold edge */
+  /* Phone card — warm ivory panel with gold edge */
   .phone-card {
-    background: linear-gradient(180deg, oklch(0.225 0.022 74), oklch(0.19 0.018 70));
-    border: 1px solid oklch(0.72 0.12 84 / 22%);
+    background: linear-gradient(180deg, oklch(1.0 0.003 78), oklch(0.96 0.010 80));
+    border: 1px solid oklch(0.62 0.12 82 / 28%);
+    box-shadow: 0 2px 12px oklch(0.62 0.12 82 / 8%), 0 1px 3px oklch(0 0 0 / 6%);
     transition: all 220ms cubic-bezier(0.23, 1, 0.32, 1);
   }
   .phone-card:hover {
-    border-color: oklch(0.72 0.12 84 / 60%);
+    border-color: oklch(0.62 0.12 82 / 65%);
     box-shadow:
-      0 0 22px oklch(0.72 0.12 84 / 14%),
-      0 10px 28px oklch(0 0 0 / 45%);
+      0 0 22px oklch(0.62 0.12 82 / 18%),
+      0 10px 28px oklch(0 0 0 / 10%);
     transform: translateY(-3px);
   }
 
   /* Emblem glow animation */
   @keyframes emblem-glow {
-    0%, 100% { filter: drop-shadow(0 0 26px oklch(0.72 0.12 84 / 30%)); }
-    50% { filter: drop-shadow(0 0 44px oklch(0.72 0.12 84 / 50%)); }
+    0%, 100% { filter: drop-shadow(0 4px 18px oklch(0.62 0.12 82 / 22%)); }
+    50% { filter: drop-shadow(0 6px 32px oklch(0.62 0.12 82 / 38%)); }
   }
   .emblem-glow {
     animation: emblem-glow 3.4s ease-in-out infinite;
@@ -182,20 +183,20 @@
     100% { background-position: 200% center; }
   }
   .btn-gold {
-    background: linear-gradient(135deg, oklch(0.60 0.11 80), oklch(0.78 0.12 87), oklch(0.60 0.11 80));
+    background: linear-gradient(135deg, oklch(0.52 0.11 78), oklch(0.70 0.13 87), oklch(0.52 0.11 78));
     background-size: 200% auto;
-    color: oklch(0.17 0.02 70);
+    color: oklch(0.98 0.005 80);
     font-weight: 700;
     transition: all 200ms cubic-bezier(0.23, 1, 0.32, 1);
     box-shadow:
-      0 0 0 1px oklch(0.82 0.11 88 / 45%),
-      0 6px 22px oklch(0.72 0.12 84 / 30%);
+      0 0 0 1px oklch(0.72 0.12 88 / 40%),
+      0 6px 22px oklch(0.62 0.12 82 / 28%);
   }
   .btn-gold:hover {
     animation: gold-shimmer 1.8s linear infinite;
     box-shadow:
-      0 0 0 1px oklch(0.82 0.11 88 / 70%),
-      0 8px 30px oklch(0.72 0.12 84 / 45%);
+      0 0 0 1px oklch(0.72 0.12 88 / 65%),
+      0 8px 30px oklch(0.62 0.12 82 / 40%);
     transform: translateY(-1px);
   }
   .btn-gold:active {
@@ -204,15 +205,15 @@
 
   /* Outlined gold button (secondary actions) */
   .btn-gold-outline {
-    border: 1px solid oklch(0.72 0.12 84 / 40%);
-    color: oklch(0.82 0.11 88);
-    background: oklch(0.72 0.12 84 / 6%);
+    border: 1px solid oklch(0.62 0.12 82 / 50%);
+    color: oklch(0.48 0.10 78);
+    background: oklch(0.62 0.12 82 / 8%);
     transition: all 200ms cubic-bezier(0.23, 1, 0.32, 1);
   }
   .btn-gold-outline:hover {
-    border-color: oklch(0.72 0.12 84 / 80%);
-    background: oklch(0.72 0.12 84 / 12%);
-    box-shadow: 0 0 18px oklch(0.72 0.12 84 / 18%);
+    border-color: oklch(0.62 0.12 82 / 80%);
+    background: oklch(0.62 0.12 82 / 14%);
+    box-shadow: 0 0 18px oklch(0.62 0.12 82 / 16%);
   }
   .btn-gold-outline:active {
     transform: scale(0.97);
@@ -240,19 +241,19 @@
   /* Ornate section title with gold diamonds */
   .section-title {
     font-family: 'Frank Ruhl Libre', serif;
-    color: oklch(0.78 0.12 86);
+    color: oklch(0.38 0.08 78);
     text-align: center;
     position: relative;
-    text-shadow: 0 0 22px oklch(0.72 0.12 84 / 25%);
   }
   .section-title::before,
   .section-title::after {
     content: '✦';
     display: inline-block;
     margin: 0 0.75rem;
-    opacity: 0.55;
+    opacity: 0.50;
     font-size: 0.55em;
     vertical-align: middle;
+    color: oklch(0.62 0.12 82);
   }
 
   @media (prefers-reduced-motion: reduce) {
