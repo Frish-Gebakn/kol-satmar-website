@@ -303,7 +303,16 @@ export default function Home() {
           >
             <div className="mb-6">
               <div className="gold-divider max-w-xs mx-auto mb-6" />
-              <h2 className="font-hebrew text-2xl sm:text-3xl font-bold mb-2 text-[oklch(0.28_0.06_76)]" dir="rtl">
+              {/* text-center is explicit here on purpose. A bare heading in
+                  this page computes text-align: start, which under dir="rtl"
+                  resolves to `right` and beats the container's text-center - so
+                  this title used to sit off to the right of its own divider and
+                  button. The other section headings only look fine because
+                  .section-title sets text-align: center itself. */}
+              <h2
+                className="font-hebrew text-2xl sm:text-3xl font-bold mb-2 text-center text-[oklch(0.28_0.06_76)]"
+                dir="rtl"
+              >
                 הערט קול סאטמאר אנליין
               </h2>
               <p className="font-cinzel text-xs tracking-[0.2em] uppercase text-[oklch(0.52_0.05_80)]">
@@ -396,7 +405,7 @@ export default function Home() {
               <h2 className="section-title font-cinzel text-2xl sm:text-3xl font-bold mb-2">
                 About Kol Satmar
               </h2>
-              <p className="font-hebrew text-sm text-[oklch(0.52_0.05_80)]" dir="rtl">
+              <p className="font-hebrew text-sm text-center text-[oklch(0.52_0.05_80)]" dir="rtl">
                 אודות קול סאטמאר
               </p>
               <GoldDivider />
@@ -558,8 +567,17 @@ export default function Home() {
               </h4>
               {/* The postal address is repeated here as well as in the About
                   section: carrier brand verification looks for it, and a footer
-                  is the first place a reviewer scrolls to. */}
-              <address className="text-sm not-italic text-[oklch(0.42_0.06_78)] leading-relaxed text-center md:text-left">
+                  is the first place a reviewer scrolls to.
+
+                  dir="ltr" is load-bearing. The page runs right-to-left, so
+                  without it the bidi algorithm moves the leading house number
+                  to the end of the line and it renders as
+                  "Fillmore Ct. #312 12". Any line that STARTS with digits and
+                  continues in Latin needs this. */}
+              <address
+                dir="ltr"
+                className="text-sm not-italic text-[oklch(0.42_0.06_78)] leading-relaxed text-center md:text-left"
+              >
                 12 Fillmore Ct. #312
                 <br />
                 Kiryas Joel, NY 10950
