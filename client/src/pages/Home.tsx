@@ -165,6 +165,7 @@ export default function Home() {
   const { ref: numbersRef, inView: numbersInView } = useInView(0.05);
   const { ref: listenRef, inView: listenInView } = useInView(0.3);
   const { ref: updatesRef, inView: updatesInView } = useInView(0.3);
+  const { ref: aboutRef, inView: aboutInView } = useInView(0.15);
 
   useEffect(() => {
     const t = setTimeout(() => setHeroVisible(true), 100);
@@ -369,6 +370,177 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ===== ABOUT / BUSINESS INFORMATION SECTION =====
+          Required by the mobile carriers for A2P 10DLC brand verification: the
+          business address, phone number and email must appear on the home page,
+          together with an about section and a plain-English description of what
+          this service is. That is why this block is in English and why the
+          address, email and phone are visible WITHOUT expanding anything - a
+          human reviewer opens the page and has to see them. Only the longer
+          detail is folded away.
+
+          It is a <details> element rather than React state on purpose: the
+          collapsed content stays in the DOM, so an automated crawler still
+          reads it. */}
+      <section ref={aboutRef} className="relative z-10 py-14 px-4" dir="ltr">
+        <div className="max-w-3xl mx-auto">
+          <div
+            style={{
+              opacity: aboutInView ? 1 : 0,
+              transform: aboutInView ? "translateY(0)" : "translateY(24px)",
+              transition:
+                "opacity 0.7s cubic-bezier(0.23,1,0.32,1), transform 0.7s cubic-bezier(0.23,1,0.32,1)",
+            }}
+          >
+            <div className="text-center mb-6">
+              <h2 className="section-title font-cinzel text-2xl sm:text-3xl font-bold mb-2">
+                About Kol Satmar
+              </h2>
+              <p className="font-hebrew text-sm text-[oklch(0.52_0.05_80)]" dir="rtl">
+                אודות קול סאטמאר
+              </p>
+              <GoldDivider />
+            </div>
+
+            <div className="phone-card rounded-lg p-6 sm:p-8">
+              <p className="text-[15px] leading-relaxed text-[oklch(0.36_0.05_78)]">
+                <strong>Kol Satmar</strong> is a community telephone information
+                line serving Yiddish-speaking Jewish communities in the United
+                States, England, Israel, Australia, Brazil and Belgium. Callers
+                dial a local number to hear community announcements, news
+                updates, lectures and recorded audio content in Yiddish, free of
+                charge, 24 hours a day. The same recordings can be played online,
+                and members who ask for it also receive short text-message
+                notifications.
+              </p>
+              <p className="text-[15px] leading-relaxed text-[oklch(0.36_0.05_78)] mt-3">
+                Kol Satmar is operated as a sole proprietorship by{" "}
+                <strong>Lipa Goldberger</strong> in Kiryas Joel, New York.
+              </p>
+
+              <div className="gold-divider my-5" />
+
+              <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 text-sm text-[oklch(0.42_0.06_78)]">
+                <div>
+                  <p className="font-cinzel text-xs font-bold tracking-wider text-[oklch(0.48_0.10_78)] mb-1">
+                    ADDRESS
+                  </p>
+                  <p className="leading-relaxed">
+                    Kol Satmar
+                    <br />
+                    12 Fillmore Ct. #312
+                    <br />
+                    Kiryas Joel, NY 10950
+                    <br />
+                    United States
+                  </p>
+                </div>
+                <div>
+                  <p className="font-cinzel text-xs font-bold tracking-wider text-[oklch(0.48_0.10_78)] mb-1">
+                    CONTACT
+                  </p>
+                  <p className="leading-relaxed">
+                    <a
+                      href="mailto:support@kolsatmar.org"
+                      className="hover:text-[oklch(0.35_0.08_76)] transition-colors"
+                    >
+                      support@kolsatmar.org
+                    </a>
+                    <br />
+                    <a
+                      href="tel:+18454442738"
+                      className="font-cinzel tracking-wider hover:text-[oklch(0.35_0.08_76)] transition-colors"
+                    >
+                      1-845-444-2738
+                    </a>
+                  </p>
+                </div>
+              </div>
+
+              <details className="mt-5">
+                {/* list-none hides the default triangle everywhere except
+                    Safari, which needs the -webkit-details-marker rule too. */}
+                <summary className="btn-gold-outline inline-flex items-center gap-2 font-cinzel text-sm font-semibold px-5 py-2 rounded-lg cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden">
+                  <span>Our services &amp; SMS program</span>
+                  <svg width="14" height="14" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                    <path
+                      d="M5 8 L10 13 L15 8"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </summary>
+
+                <div className="mt-5 text-sm leading-relaxed text-[oklch(0.40_0.05_78)]">
+                  <h3 className="font-cinzel text-base font-bold text-[oklch(0.38_0.08_78)] mb-2">
+                    Our services
+                  </h3>
+                  <ul className="list-disc ps-5 space-y-1.5">
+                    <li>
+                      <strong>Telephone information line</strong> — local access
+                      numbers in eight regions worldwide, available 24 hours a
+                      day at no charge to the caller.
+                    </li>
+                    <li>
+                      <strong>Online listening</strong> — the same recordings
+                      through our web player.
+                    </li>
+                    <li>
+                      <strong>SMS notifications</strong> — short text updates for
+                      community members who ask to receive them.
+                    </li>
+                  </ul>
+
+                  <div className="gold-divider my-5" />
+
+                  <h3 className="font-cinzel text-base font-bold text-[oklch(0.38_0.08_78)] mb-2">
+                    SMS notification program
+                  </h3>
+                  <p>
+                    Community members may ask to receive short text-message
+                    notifications, such as the daily time of the afternoon
+                    (Mincha) prayer service.
+                  </p>
+                  <ul className="list-disc ps-5 space-y-1.5 mt-2">
+                    <li>
+                      <strong>How to join:</strong> ask in person, or call or
+                      text us at 1-845-444-2738. Members are added by hand; there
+                      is no automatic sign-up form.
+                    </li>
+                    <li>
+                      <strong>Message frequency:</strong> about one message per
+                      weekday.
+                    </li>
+                    <li>
+                      <strong>Cost:</strong> message and data rates may apply.
+                    </li>
+                    <li>
+                      <strong>To stop:</strong> reply <strong>STOP</strong> to any
+                      message. Reply <strong>HELP</strong> for help, or email{" "}
+                      <a
+                        href="mailto:support@kolsatmar.org"
+                        className="underline hover:text-[oklch(0.35_0.08_76)]"
+                      >
+                        support@kolsatmar.org
+                      </a>
+                      .
+                    </li>
+                  </ul>
+                  <p className="mt-3 text-[13px] text-[oklch(0.50_0.04_80)]">
+                    No mobile information will be shared with third parties or
+                    affiliates for marketing or promotional purposes. Text
+                    messaging originator opt-in data and consent will not be
+                    shared with any third parties.
+                  </p>
+                </div>
+              </details>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ===== FOOTER ===== */}
       <footer
         className="relative z-10 py-10 px-4"
@@ -384,6 +556,16 @@ export default function Home() {
               <h4 className="font-cinzel text-sm font-bold text-[oklch(0.48_0.10_78)] mb-1 tracking-wider">
                 Contact Us
               </h4>
+              {/* The postal address is repeated here as well as in the About
+                  section: carrier brand verification looks for it, and a footer
+                  is the first place a reviewer scrolls to. */}
+              <address className="text-sm not-italic text-[oklch(0.42_0.06_78)] leading-relaxed text-center md:text-left">
+                12 Fillmore Ct. #312
+                <br />
+                Kiryas Joel, NY 10950
+                <br />
+                United States
+              </address>
               <a
                 href="mailto:support@kolsatmar.org"
                 className="text-sm text-[oklch(0.42_0.06_78)] hover:text-[oklch(0.35_0.08_76)] transition-colors"
